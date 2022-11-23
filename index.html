@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Brief-7</title>
+</head>
+
+<body>
+    <article>
+
+        <form>
+
+            <label for="nom">Nom</label>
+            <input type="text" id="nom"><br>
+    
+            <label for="marque">Marque</label>
+            <input type="text" id="marque"><br>
+    
+            <label for="prix">Prix</label>
+            <input type="text" id="prix"><br>
+    
+            <label for="date">Date Production</label>
+            <input type="date" id="date"><br>
+    
+            <select name="type" id="type">
+                <option value="hygiène et toilette">Hygiène et toilette</option>
+                <option value="soins esthétiques">Soins esthétiques</option>
+                <option value="produits solaires">Produits solaires</option>
+                <option value="beauté des mains et des pieds">Beauté des mains et des pieds</option>
+                <option value="produits de maquillage">Produits de maquillage</option>
+                <option value="entretien capillaires">Entretien capillaires</option>
+                <option value="parfums">Parfums</option>
+            </select>
+    
+            <p>Est en promotion:</p>
+            <label for="non">non</label>
+            <input type="radio" id="non" name="promotion" value="non" checked>
+            <label for="oui">oui</label>
+            <input type="radio" id="oui" name="promotion" value="oui">
+    
+        </form>
+
+        <input type="button" value="ajouter" id="ajouter" onclick="ajouter()">
+
+    </article>
+    <article>
+        <table id="table">
+            <tr>
+                <th>Nom</th>
+                <th>Marque</th>
+                <th>Prix</th>
+                <th>Date Production</th>
+                <th>Type</th>
+                <th>Promotion</th>
+                <th>Modification</th>
+                <th>Suppression</th>
+            </tr>
+        </table>
+    </article>
+</body>
+
+</html>
