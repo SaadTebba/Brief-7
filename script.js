@@ -42,22 +42,29 @@ function ajouter() {
     let prix = row.insertCell();
     let date = row.insertCell();
     let type = row.insertCell();
-    let non = row.insertCell();
+    let promotion = row.insertCell();
     let modifier = row.insertCell();
     let supprimer = row.insertCell();
-
 
     nom.innerHTML = document.getElementById("nom").value;
     marque.innerHTML = document.getElementById("marque").value;
     prix.innerHTML = document.getElementById("prix").value;
     date.innerHTML = document.getElementById("date").value;
     type.innerHTML = document.getElementById("type").value;
-    non.innerHTML = document.getElementById("oui").value;
-    modifier.innerHTML = document.getElementById("oui");
-    supprimer.innerHTML = document.getElementById("oui");
+    promotion.innerHTML = document.getElementById("non").value;
+
+    modifier.innerHTML = "Modifer";
+    modifier.onclick = function() {
+      console.log('Modifier clicked')
+    }
+    supprimer.innerHTML = "Supprimer";
+    supprimer.onclick = function() {
+      row.remove()
+    }
 
   }
 }
+
 
 
 

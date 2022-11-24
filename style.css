@@ -3,22 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-image: url(/background.jpg);
   background-size: cover;
 }
+
 #article1 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-form {
+
+/* form {
   height: 100vh;
-  width: 60%;
-}
+} */
+
 .fas {
   visibility: hidden;
 }
+
+/* #modifier, #supprimer {
+  visibility: hidden;
+} */
 
 /* ===================================================== */
 /* ===================================================== */
