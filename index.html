@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&family=Montserrat:wght@100;200;300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/165265fe22.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -21,26 +26,28 @@
 
 <body>
     <main>
-        <article id="article1">
+        <section id="article1">
 
             <form>
 
-                <label for="nom">Nom</label>
-                <input type="text" id="nom">
-                <i class="fas fa-exclamation-circle" id="nomerror">Le nom du produit sont des chaînes de caractères d'une longueur maximale de 30</i><br>
+                <label for="nom" class="labels">Nom</label>
+                <input type="text" id="nom" class="inputs" onblur="nomBlur()">
+                <i class="fas fa-exclamation-circle" id="nomerror"><span class="errortext">le longueur maximale est 30 caractères</span></i><br>
 
-                <label for="marque">Marque</label>
-                <input type="text" id="marque">
-                <i class="fas fa-exclamation-circle" id="marqueerror">La marque du produit sont des chaînes de caractères d'une longueur maximale de 30</i><br>
+                <label for="marque" class="labels">Marque</label>
+                <input type="text" id="marque" class="inputs" onblur="marqueBlur()">
+                <i class="fas fa-exclamation-circle" id="marqueerror"><span class="errortext">le longueur minimale est 3 caractères</span></i><br>
 
-                <label for="prix">Prix</label>
-                <input type="text" id="prix">
-                <i class="fas fa-exclamation-circle" id="prixerror">Le prix doit être un réel</i><br>
+                <label for="prix" class="labels">Prix</label>
+                <input type="text" id="prix" class="inputs" onblur="prixBlur()">
+                <i class="fas fa-exclamation-circle" id="prixerror"><span class="errortext">Le prix doit être un réel</span></i><br>
 
-                <label for="date">Date Production</label>
-                <input type="date" id="date" required pattern="\d{4}-\d{2}-\d{2}" required><br>
+                <label for="date" class="labels">Date Production</label>
+                <input type="date" id="date" class="inputs"><br>
+                <i class="fas fa-exclamation-circle" id="dateerror"><span class="errortext">Entrez une date valide</span></i><br>
 
-                <select name="type" id="type">
+                <p class="labels">Le type</p>
+                <select name="type" id="type" class="inputs">
                     <option value="Hygiène et toilette">Hygiène et toilette</option>
                     <option value="Soins esthétiques">Soins esthétiques</option>
                     <option value="Produits solaires">Produits solaires</option>
@@ -50,20 +57,20 @@
                     <option value="Parfums">Parfums</option>
                 </select>
 
-                <p>Est en promotion:</p>
+                <p class="labels">Est en promotion:</p>
                 <label for="non">non</label>
                 <input type="radio" id="non" name="promotion" value="non">
                 <label for="oui">oui</label>
                 <input type="radio" id="oui" name="promotion" value="oui">
-                <i class="fas fa-exclamation-circle" id="promotionerror">Choose une option</i><br>
+                <i class="fas fa-exclamation-circle" id="promotionerror"><span class="errortext">choisis une option</span></i><br>
 
             </form>
 
             <input type="button" value="ajouter" id="ajouter" onclick="ajouter()">
 
-        </article>
-        <article id="artcile2">
-            
+        </section>
+        <section id="artcile2">
+
             <table id="table">
                 <tr>
                     <th>Nom</th>
@@ -76,8 +83,8 @@
                     <th>Suppression</th>
                 </tr>
             </table>
-            
-        </article>
+
+        </section>
     </main>
 </body>
 

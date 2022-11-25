@@ -1,4 +1,45 @@
+// Onblur -- nom & marque & prix
+
+function nomBlur() {
+
+  let nom = document.getElementById("nom").value;
+  let nomMarqueValidation = /^[aA-zZ ?aA-zZ]{3,30}$/;
+
+  if (nomMarqueValidation.test(nom)) {
+    document.getElementById("nomerror").style.visibility = "hidden";
+  } else {
+    document.getElementById("nomerror").style.visibility = "visible";
+  }
+}
+
+function marqueBlur() {
+
+  let marque = document.getElementById("marque").value;
+  let nomMarqueValidation = /^[aA-zZ ?aA-zZ]{3,30}$/;
+
+  if (nomMarqueValidation.test(marque)) {
+    document.getElementById("marqueerror").style.visibility = "hidden";
+  } else {
+    document.getElementById("marqueerror").style.visibility = "visible";
+  }
+}
+
+function prixBlur() {
+
+  let prix = document.getElementById("prix").value;
+  let prixValidation = /^[0-9]+\$?$/;
+
+  if (prixValidation.test(prix)) {
+    document.getElementById("prixerror").style.visibility = "hidden";
+  } else {
+    document.getElementById("prixerror").style.visibility = "visible";
+  }
+}
+
+// Onclick (ajouter)
+
 function ajouter() {
+
   let nomMarqueValidation = /^[aA-zZ ?aA-zZ]{3,30}$/;
   let prixValidation = /^[0-9]+\$?$/;
 
@@ -6,7 +47,6 @@ function ajouter() {
   let marque = document.getElementById("marque").value;
   let prix = document.getElementById("prix").value;
   let date = document.getElementById("date").value;
-  let type = document.getElementById("type").value;
 
   let arr = [];
 
@@ -31,17 +71,21 @@ function ajouter() {
     arr.push(1);
   }
 
-  if (non.checked || oui.checked) {
-    console.log("Radio checked")
-    document.getElementById("promotionerror").style.visibility = "hidden";
-    } else {
-      arr.push(1);
-      document.getElementById("promotionerror").style.visibility = "visible";
-    }
+  if (date == '') {
+    document.getElementById("dateerror").style.visibility = "visible";
+    arr.push(1);
+  } else {
+    document.getElementById("dateerror").style.visibility = "hidden";
+  }
 
-  // if (date == null) {
-  //   arr.push (1);
-  // }
+
+  if (non.checked || oui.checked) {
+    document.getElementById("promotionerror").style.visibility = "hidden";
+  } else {
+    arr.push(1);
+    document.getElementById("promotionerror").style.visibility = "visible";
+  }
+
 
   if (arr == 0) {
 
@@ -64,27 +108,44 @@ function ajouter() {
     type.innerHTML = document.getElementById("type").value;
 
     if (non.checked) {
-    promotion.innerHTML = document.getElementById("non").value;
+      promotion.innerHTML = document.getElementById("non").value;
     } else if (oui.checked) {
-    promotion.innerHTML = document.getElementById("oui").value;
+      promotion.innerHTML = document.getElementById("oui").value;
     }
 
-
-    modifier.innerHTML = "Modifer";
-    modifier.onclick = function () {
-
-      nom.contentEditable = true;
-      marque.contentEditable = true;
-      prix.contentEditable = true;
-      date.contentEditable = true;
-      type.contentEditable = true;
-      promotion.contentEditable = true;
-
-    }
+    document.getElementById('nom').value = '';
+    document.getElementById('marque').value = '';
+    document.getElementById('prix').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('nom').value = '';
 
     supprimer.innerHTML = "Supprimer";
     supprimer.onclick = function () {
       row.remove();
+    }
+
+    modifier.innerHTML = "Modifier";
+    modifier.onclick = function () {
+
+      modifier.innerHTML = "Save";
+
+      document.getElementById("nom").value = nom.innerHTML;
+      document.getElementById("marque").value = marque.innerHTML;
+      document.getElementById("prix").value = prix.innerHTML;
+      document.getElementById("date").value = date.innerHTML;
+      document.getElementById("type").value = type.innerHTML;
+
+      modifier.onclick = function () {
+
+        nom.innerHTML = document.getElementById("nom").value;
+        marque.innerHTML = document.getElementById("marque").value;
+        prix.innerHTML = document.getElementById("prix").value;
+        date.innerHTML = document.getElementById("date").value;
+        type.innerHTML = document.getElementById("type").value;
+
+        modifier.innerHTML = "Modifier";
+
+      }
     }
   }
 }
