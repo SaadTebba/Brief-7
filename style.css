@@ -9,24 +9,36 @@ body {
   background-size: cover;
 }
 
+/* Grid settings */
+
 #article1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-area: "input";
+  background-color: rgb(112, 76, 25); 
+  height: 100vh;
+}
+#article2 {
+  grid-area: "table";
+  width: 100%;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'input table table';
 }
 
-/* form {
-  height: 100vh;
-} */
+/* Inputs & Labels */
+
+input, select, label, p {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 30px;
+}
 
 .fas {
   visibility: hidden;
 }
 
-/* #modifier, #supprimer {
-  visibility: hidden;
-} */
-
 /* ===================================================== */
 /* ===================================================== */
 /* ===================================================== */
@@ -34,20 +46,24 @@ body {
 /* ===================================================== */
 
 
-table {
+#table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
+  margin: 30px;
+  width: 100%;
 }
 
-td,
-th {
-  border: 1px solid #dddddd;
+td, th {
+  border: 1px solid #ffffff;
   text-align: left;
   padding: 8px;
 }
-
+tr:first-of-type {
+  background-color: rgb(89, 44, 15);
+  color: white;
+}
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #e6c3b4;
 }
 
 /* text of sign in {

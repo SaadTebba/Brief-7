@@ -1,5 +1,4 @@
 function ajouter() {
-
   let nomMarqueValidation = /^[aA-zZ ?aA-zZ]{3,30}$/;
   let prixValidation = /^[0-9]+\$?$/;
 
@@ -32,6 +31,18 @@ function ajouter() {
     arr.push(1);
   }
 
+  if (non.checked || oui.checked) {
+    console.log("Radio checked")
+    document.getElementById("promotionerror").style.visibility = "hidden";
+    } else {
+      arr.push(1);
+      document.getElementById("promotionerror").style.visibility = "visible";
+    }
+
+  // if (date == null) {
+  //   arr.push (1);
+  // }
+
   if (arr == 0) {
 
     let table = document.getElementById("table");
@@ -51,21 +62,31 @@ function ajouter() {
     prix.innerHTML = document.getElementById("prix").value;
     date.innerHTML = document.getElementById("date").value;
     type.innerHTML = document.getElementById("type").value;
+
+    if (non.checked) {
     promotion.innerHTML = document.getElementById("non").value;
+    } else if (oui.checked) {
+    promotion.innerHTML = document.getElementById("oui").value;
+    }
+
 
     modifier.innerHTML = "Modifer";
-    modifier.onclick = function() {
-      console.log('Modifier clicked')
-    }
-    supprimer.innerHTML = "Supprimer";
-    supprimer.onclick = function() {
-      row.remove()
+    modifier.onclick = function () {
+
+      nom.contentEditable = true;
+      marque.contentEditable = true;
+      prix.contentEditable = true;
+      date.contentEditable = true;
+      type.contentEditable = true;
+      promotion.contentEditable = true;
+
     }
 
+    supprimer.innerHTML = "Supprimer";
+    supprimer.onclick = function () {
+      row.remove();
+    }
   }
 }
-
-
-
 
 // window.scrollBy(100, 0);

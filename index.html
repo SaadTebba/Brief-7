@@ -38,7 +38,7 @@
                 <i class="fas fa-exclamation-circle" id="prixerror">Le prix doit être un réel</i><br>
 
                 <label for="date">Date Production</label>
-                <input type="date" id="date"><br>
+                <input type="date" id="date" required pattern="\d{4}-\d{2}-\d{2}" required><br>
 
                 <select name="type" id="type">
                     <option value="Hygiène et toilette">Hygiène et toilette</option>
@@ -52,9 +52,10 @@
 
                 <p>Est en promotion:</p>
                 <label for="non">non</label>
-                <input type="radio" id="non" name="promotion" value="non" checked>
+                <input type="radio" id="non" name="promotion" value="non">
                 <label for="oui">oui</label>
                 <input type="radio" id="oui" name="promotion" value="oui">
+                <i class="fas fa-exclamation-circle" id="promotionerror">Choose une option</i><br>
 
             </form>
 
@@ -62,6 +63,7 @@
 
         </article>
         <article id="artcile2">
+            
             <table id="table">
                 <tr>
                     <th>Nom</th>
@@ -74,12 +76,6 @@
                     <th>Suppression</th>
                 </tr>
             </table>
-            
-            <!-- <input type="button" id="modifier" value="Modifier" onclick="modifier()">
-            <input type="button" id="supprimer" value="Supprimer" onclick="supprimer()"> -->
-
-        <!-- <button type="button" id="modifier" value="Modifier" onclick="modifier()">Modifier</button>
-        <button type="button" id="supprimer" value="Supprimer" onclick="supprimer()">Supprimer</button> -->
             
         </article>
     </main>
