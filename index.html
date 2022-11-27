@@ -32,22 +32,23 @@
 
                 <label for="nom" class="labels">Nom</label>
                 <input type="text" id="nom" class="inputs" onblur="nomBlur()">
-                <i class="fas fa-exclamation-circle" id="nomerror"><span class="errortext">le longueur maximale est 30 caractères</span></i><br>
+                <i class="fas fa-exclamation-circle" id="nomerror"><span class="errortext">Le nom doit comporter entre 3 et 30 caractères</span></i>
 
                 <label for="marque" class="labels">Marque</label>
                 <input type="text" id="marque" class="inputs" onblur="marqueBlur()">
-                <i class="fas fa-exclamation-circle" id="marqueerror"><span class="errortext">le longueur minimale est 3 caractères</span></i><br>
+                <i class="fas fa-exclamation-circle" id="marqueerror"><span class="errortext">La marque doit comporter entre 3 et 30 caractères</span></i><br>
 
                 <label for="prix" class="labels">Prix</label>
                 <input type="text" id="prix" class="inputs" onblur="prixBlur()">
                 <i class="fas fa-exclamation-circle" id="prixerror"><span class="errortext">Le prix doit être un réel</span></i><br>
 
                 <label for="date" class="labels">Date Production</label>
-                <input type="date" id="date" class="inputs"><br>
+                <input type="date" id="date" class="inputs" onblur="dateBlur()"><br>
                 <i class="fas fa-exclamation-circle" id="dateerror"><span class="errortext">Entrez une date valide</span></i><br>
 
                 <p class="labels">Le type</p>
-                <select name="type" id="type" class="inputs">
+                <select name="type" id="type" class="inputs" onblur="typeBlur()">
+                    <option disabled selected value="choisis une option">-- choisis une option --</option>
                     <option value="Hygiène et toilette">Hygiène et toilette</option>
                     <option value="Soins esthétiques">Soins esthétiques</option>
                     <option value="Produits solaires">Produits solaires</option>
@@ -56,6 +57,7 @@
                     <option value="Entretien capillaires">Entretien capillaires</option>
                     <option value="Parfums">Parfums</option>
                 </select>
+                <i class="fas fa-exclamation-circle" id="typeerror"><span class="errortext">choisis une option</span></i><br>
 
                 <p class="labels">Est en promotion:</p>
                 <label for="non">non</label>

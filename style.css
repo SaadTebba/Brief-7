@@ -15,7 +15,6 @@ body {
 /* Grid settings */
 
 #article1 {
-  /* grid-area: "input"; */
   width: 25%;
   float: left;
   background-color: #ffffff;
@@ -39,7 +38,7 @@ input, select, label, p, .fas {
   height: 35px;
   border-radius: 5px;
   border: 1px solid black;
-  padding: 8px;
+  padding: 5px;
 }
 .labels {
   margin-bottom: 5px;
@@ -56,17 +55,17 @@ input, select, label, p, .fas {
   font-weight: 600;
 }
 
-.fas {
-  visibility: hidden;
-  margin-top: 5px;
-  color: rgb(85, 4, 4);
-}
 .errortext {
-  font-size: 12px;
+  font-size: 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   margin-left: 5px;
 }
+.fas {
+  visibility: hidden;
+  margin-top: 5px;
+  color: rgb(85, 4, 4);
+  }
 
 /* ===================================================== */
 /* ===================================================== */
