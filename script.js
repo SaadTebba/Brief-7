@@ -168,27 +168,23 @@ function ajouter() {
     // Modification =============================================
 
     modifier.onclick = function () {
-      modifier.innerHTML = "Save";
+
+      document.getElementById("save").style.visibility = "visible";
 
       document.getElementById("nom").value = nom.innerHTML;
       document.getElementById("marque").value = marque.innerHTML;
       document.getElementById("prix").value = prix.innerHTML;
       document.getElementById("date").value = date.innerHTML;
       document.getElementById("type").value = type.innerHTML;
+      if (promotion.innerHTML = 'non') {
+        non.checked = true;
+      } else if (promotion.innerHTML = 'oui') {
+        oui.checked = true;
+      }
 
-      // document.getElementById("non").checked;
-
-      // if ('non' = promotion.innerHTML) {
-      //   non.checked;
-      // } else if ('oui' = promotion.innerHTML) {
-      //   oui.checked;
-      // }
-
-      modifier.onclick = function () {
-
-        validatingForms();
-
-        modifier.innerHTML = "Modifier";
+      document.getElementById("save").onclick = function () {
+        
+        validatingForms()
 
         nom.innerHTML = document.getElementById("nom").value;
         marque.innerHTML = document.getElementById("marque").value;
@@ -200,7 +196,9 @@ function ajouter() {
         } else if (oui.checked) {
           promotion.innerHTML = document.getElementById("oui").value;
         }
+
         emptyValues();
+        document.getElementById("save").style.visibility = "hidden";
       };
     };
   }
