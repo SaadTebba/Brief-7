@@ -17,18 +17,21 @@
     <title>Brief-7</title>
 </head>
 
-<!-- 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
-						<span class="focus-input100"></span>
-					</div>
-                 -->
-
 <body>
     <main>
+
+        <div id="confirm">
+            <div id="sub-confirm">
+                <h2>Delete warning</h2>
+                <p>Are you sure you want to delete this product?</p>
+                <input type="button" value="Delete" id="delete">
+                <input type="button" value="Cancel" id="cancel" onclick= 'document.getElementById("confirm").style.visibility = "hidden"'>
+            </div>
+        </div>
+
         <section id="article1">
 
-            <form>
+            <form id="form">
 
                 <label for="nom" class="labels">Nom</label>
                 <input type="text" id="nom" class="inputs" onblur="nomBlur()">
@@ -46,7 +49,7 @@
                 <input type="date" id="date" class="inputs" onblur="dateBlur()"><br>
                 <i class="fas fa-exclamation-circle" id="dateerror"><span class="errortext">Entrez une date valide</span></i><br>
 
-                <p class="labels">Le type</p>
+                <p class="labels">Les types</p>
                 <select name="type" id="type" class="inputs" onblur="typeBlur()">
                     <option disabled selected value="choisis une option">-- choisis une option --</option>
                     <option value="Hygiène et toilette">Hygiène et toilette</option>
@@ -70,6 +73,8 @@
 
             <input type="button" value="ajouter" id="ajouter" onclick="ajouter()">
             <input type="button" value="save" id="save" onclick="save()">
+
+            
 
         </section>
         <section id="artcile2">
