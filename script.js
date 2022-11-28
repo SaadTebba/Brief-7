@@ -173,11 +173,11 @@ function ajouter() {
 
     supprimer.onclick = function () {
       document.getElementById("confirm").style.visibility = "visible";
+      document.getElementById('delete').onclick = function () {
+        row.remove();
+        document.getElementById("confirm").style.visibility = "hidden";
+      };
     }
-    document.getElementById('delete').onclick = function () {
-      row.remove();
-      document.getElementById("confirm").style.visibility = "hidden";
-    };
 
 
     // Modification =======================================================================================
