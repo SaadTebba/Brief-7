@@ -137,37 +137,66 @@ function ajouter() {
     let promotion = row.insertCell();
     let modifier = row.insertCell();
     let supprimer = row.insertCell();
-    // modifier.style.backgroundColor = "#c74e08";
-    // modifier.style.color = "white";
-    // supprimer.style.backgroundColor = "#D11A2A";
-    // supprimer.style.color = "white";
 
     nom.innerHTML = document.getElementById("nom").value;
     marque.innerHTML = document.getElementById("marque").value;
     prix.innerHTML = document.getElementById("prix").value;
     date.innerHTML = document.getElementById("date").value;
     type.innerHTML = document.getElementById("type").value;
-    if (non.checked) {
-      promotion.innerHTML = document.getElementById("non").value;
-    } else if (oui.checked) {
-      promotion.innerHTML = document.getElementById("oui").value;
-    }
-    supprimer.innerHTML = "Supprimer";
+    promotion.innerHTML = document.querySelector("form").promotion.value;
     modifier.innerHTML = "Modifier";
+    supprimer.innerHTML = "Supprimer";
 
-    // Empty inputs once "Ajouter" is clicked =============================================================
+    // we have to sort rows...
+    // we have to take the name as an order to start sorting rows
 
-    function emptyValues() {
-      document.getElementById("nom").value = "";
-      document.getElementById("marque").value = "";
-      document.getElementById("prix").value = "";
-      document.getElementById("date").value = "";
-      document.getElementById("type").value = "choisis une option";
-      non.checked = false;
-      oui.checked = false;
-    }
+    // row.sort(nom.innerHTML)
 
-    emptyValues();
+    // ============================================================= Local Storage =============================================================
+
+    localStorage.setItem("nomkey", nom.innerHTML);
+    localStorage.setItem("marquekey", marque.innerHTML);
+    localStorage.setItem("prixkey", prix.innerHTML);
+    localStorage.setItem("datekey", date.innerHTML);
+    localStorage.setItem("typekey", type.innerHTML);
+    localStorage.setItem("promotionkey", promotion.innerHTML);
+    localStorage.setItem("supprimerkey", supprimer.innerHTML);
+    localStorage.setItem("modifierkey", modifier.innerHTML);
+
+    // for (i = 0; i < localStorage.length; i++) {
+
+    //   localStorage.nomkey[i];
+    //   localStorage.marquekey[i];
+    //   localStorage.prixkey[i];
+    //   localStorage.datekey[i];
+    //   localStorage.typekey[i];
+    //   localStorage.promotionkey[i];
+    //   localStorage.supprimerkey[i];
+    //   localStorage.modifierkey[i];
+    // }
+
+
+    // Empty inputs && Sort Alphabetically =============================================================
+
+    // function emptyValues() {
+    //   document.getElementById("nom").value = "";
+    //   document.getElementById("marque").value = "";
+    //   document.getElementById("prix").value = "";
+    //   document.getElementById("date").value = "";
+    //   document.getElementById("type").value = "choisis une option";
+    //   non.checked = false;
+    //   oui.checked = false;
+    // }
+    // emptyValues();
+
+    // function sortAlphabetically() {
+    //   row.sort (function(a, b) {
+    //     if (a.nom.innerHTML < b.nom.innerHTML) { return -1; }
+    //     if (a.nom.innerHTML > b.nom.innerHTML) { return 1; }
+    //     return 0;
+    // }
+    // )
+    // }
 
     // Suppression ========================================================================================
 
